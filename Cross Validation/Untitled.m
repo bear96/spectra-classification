@@ -1,0 +1,14 @@
+clc, clear all, close all;
+XTrain = xlsread('2ndderv_preprocessed_training_sample_spectra_1339.75-1440.25.xlsx');
+testdata = xlsread('2ndderv_preprocessed_test_sample_spectra_1339.75-1440.25.xls');
+YTest = xlsread('test ref data_caffeine_7x3_15 samples.xls');
+% XTrain_Norm = normalize(XTrain, 'range');
+XXTR = XTrain';
+% XXTrain = ResampledData(XTrain);
+height = 4500;
+width = 1;
+channels = 1;
+samples = 105;
+XXTrain = ResampledData(XTrain,height);
+XXTest = ResampledData(testdata,height);
+x = rand(1);
